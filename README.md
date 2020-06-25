@@ -9,7 +9,7 @@ for testing and playing :)
  2) cd the dir
  3) install 
     
-    helm install -n play . --debug --dryrun 
+    helm install -n play . --debug # --dryrun  
  
  
 # notes
