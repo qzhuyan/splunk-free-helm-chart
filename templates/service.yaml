@@ -11,6 +11,11 @@ spec:
       targetPort: http
       protocol: TCP
       name: http
+    - port: 10000
+      targetPort: datain
+      protocol: TCP
+      name: datain
+
   selector:
     app.kubernetes.io/name: {{ include "splunk.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}

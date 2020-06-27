@@ -33,6 +33,9 @@ spec:
             - name: http
               containerPort: 8000
               protocol: TCP
+            - name: datain
+              containerPort: 10000
+              protocol: TCP
           livenessProbe:
             initialDelaySeconds: 60
             httpGet:

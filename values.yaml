@@ -67,7 +67,7 @@ tolerations: []
 
 affinity: {}
 
-admin_password: ""
+admin_password: "thisIsNotUsed"
 
 pvc:
   size: 5G
