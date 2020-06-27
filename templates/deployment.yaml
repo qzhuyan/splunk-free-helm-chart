@@ -57,12 +57,19 @@ spec:
           volumeMounts:
             - mountPath: /opt/splunk/var
               name: data
+            - mountPath: /opt/splunk/etc
+              name: etc
+
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
         - name: data
           persistentVolumeClaim:
             claimName: splunk-data
+        - name: etc
+          persistentVolumeClaim:
+            claimName: splunk-etc
+
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

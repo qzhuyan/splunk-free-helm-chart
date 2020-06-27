@@ -10,3 +10,17 @@ spec:
   resources:
     requests:
       storage: {{ .Values.pvc.size }}
+
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name:  splunk-etc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: {{ .Values.pvc.storageClassName }}
+  resources:
+    requests:
+      storage: 100M
